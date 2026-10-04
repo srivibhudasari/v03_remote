@@ -1,0 +1,567 @@
+pipeline {
+    agent{
+        label "slavenode"
+        }
+    environment {
+        artifactname = 'vibhuapp'
+        artifactrepo = 's3/vibhubucket'
+    }
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo "Hello World this app name is ${artifactname} and artifact repo is ${artifactrepo}"
+                sh "sleep 10"
+            }
+        }
+        stage('Hola') {
+            steps {
+                echo "Hola Mundo"
+                echo "Hola means hello in Spanish"
+                sh "pwd"
+                sh "ls"
+                sh " echo the repo is ${artifactrepo}"
+            }
+        }
+    }
+    post {
+        success {
+            mail to: 'dsv8066@gmail.com',
+            subject: 'Build Successful',
+            body: 'Pipeline Built Successfully'            }
+        failure {
+            mail to: 'dsv8066@gmail.com',
+            subject: 'Build Failed',
+            body: 'Pipeline Failed'
+                }
+        }
+}
+
+
+
+
+---------------------------------------------------
+
+
+pipeline {
+    agent{
+        label "slavenode"
+        }
+    environment {
+        artifactname = 'vibhuapp'
+        artifactrepo = 's3/vibhubucket'
+    }
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo "Hello World this app name is ${artifactname} and artifact repo is ${artifactrepo}"
+                sh "sleep 10"
+            }
+        }
+        stage('Hola') {
+            steps {
+                echo "Hola Mundo"
+                echo "Hola means hello in Spanish"
+                sh "pwd"
+                sh "ls"
+                sh " echo the repo is ${artifactrepo}"
+            }
+        }
+    }
+    post {
+        success {
+            echo "This will run only if successful"
+            }
+        failure {
+            mail to: 'dsv8066@gmail.com',
+            subject: 'Build Successful',
+            body: 'Pipeline Built Successfully'
+                }
+        }
+}
+
+------------------------------------------------------
+
+
+
+pipeline {
+    agent{
+        label "slavenode"
+        }
+    environment {
+        artifactname = 'vibhuapp'
+        artifactrepo = 's3/vibhubucket'
+    }
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo "Hello World this app name is ${artifactname} and artifact repo is ${artifactrepo}"
+                sh "sleep 10"
+            }
+        }
+        stage('Hola') {
+            steps {
+                echo "Hola Mundo"
+                echo "Hola means hello in Spanish"
+                sh "pwd"
+                sh "ls"
+                sh " echo the repo is ${artifactrepo}"
+            }
+        }
+    }
+    post {
+        success {
+            echo "This will run only if successful"
+            }
+        failure {
+            echo "This will run only if failed"
+            }
+        }
+}
+
+------------------------------------------
+
+
+pipeline {
+    agent{
+        label "slavenode"
+        }
+    environment {
+        artifactname = 'vibhuapp'
+        artifactrepo = 's3/vibhubucket'
+    }
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo "Hello World this app name is ${artifactname} and artifact repo is ${artifactrepo}"
+                sh "sleep 10"
+            }
+        }
+        stage('Hola') {
+            steps {
+                echo "Hola Mundo"
+                echo "Hola means hello in Spanish"
+                sh "pwd"
+                sh "ls"
+                sh " echo the repo is ${artifactrepo}"
+            }
+        }
+    }
+    post {
+        always {
+            echo "Pipeline finished"
+            cleanWs()
+            }
+        success {
+            echo "This will run only if successful"
+            }
+        failure {
+            echo "This will run only if failed"
+            }
+        }
+}
+
+--------------------------------------------------
+
+pipeline {
+    agent{
+        label "slavenode"
+        }
+    environment {
+        artifactname = 'vibhuapp'
+        artifactrepo = 's3/vibhubucket"
+    }
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo "Hello World"
+                sh "sleep 10"
+            }
+        }
+        stage('Hola') {
+            steps {
+                echo "Hola Mundo"
+                echo "Hola means hello in Spanish"
+                sh "pwd"
+                sh "ls"
+                mkdir "a1"
+            }
+        }
+    }
+    post {
+        always {
+            echo "Pipeline finished"
+            cleanWs()
+            }
+        success {
+            echo "This will run only if successful"
+            }
+        failure {
+            echo "This will run only if failed"
+            }
+        }
+}
+
+---------------------------
+
+
+pipeline {
+    agent{
+        label "slavenode"
+        }
+        
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo "Hello World"
+                sh "sleep 10"
+            }
+        }
+        stage('Hola') {
+            steps {
+                echo "Hola Mundo"
+                echo "Hola means hello in Spanish"
+                sh "pwd"
+                sh "ls"
+                mkdir "a1"
+            }
+        }
+    }
+    post {
+        always {
+            echo "Pipeline finished"
+            cleanWs()
+            }
+        success {
+            echo "This will run only if successful"
+            }
+        failure {
+            echo "This will run only if failed"
+            }
+        }
+}
+
+----------------------------------------
+
+pipeline {
+    agent{
+        label "slavenode"
+        }
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo "Hello World"
+                sh "sleep 10"
+            }
+        }
+        stage('Hola') {
+            steps {
+                echo "Hola Mundo"
+                echo "Hola means hello in Spanish"
+                sh "pwd"
+                sh "ls"
+                mkdir "a1"
+            }
+        }
+    }
+    post {
+        always {
+            echo "This will always run"
+            }
+        success {
+            echo "This will run only if successful"
+            }
+        failure {
+            echo "This will run only if failed"
+            }
+        }
+}
+
+-----------------------------------
+
+pipeline {
+    agent{
+        label "slavenode"
+        }
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo "Hello World"
+                sh "sleep 10"
+            }
+        }
+        stage('Hola') {
+            steps {
+                echo "Hola Mundo"
+                echo "Hola means hello in Spanish"
+                sh "pwd"
+                sh "ls"
+                mkdir "a1"
+            }
+        }
+    }
+    post {
+        always {
+            echo "This will always run"
+            }
+        success {
+            echo "This will run only if successful"
+            }
+        failure {
+            echo "This will run only if failed"
+            }
+        }
+}
+
+-----------------------------------------
+
+pipeline {
+    agent{
+        label "slavenode"
+        }
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo "Hello World"
+                sh "sleep 10"
+            }
+        }
+        stage('Hola') {
+            steps {
+                echo "Hola Mundo"
+                echo "Hola means hello in Spanish"
+                sh "pwd"
+                sh "ls"
+                mkdir "a1"
+            }
+        }
+    }
+    post {
+        success {
+            echo "This will run only if successful"
+            }
+        failure {
+            echo "This will run only if failed"
+            }
+        }
+}
+
+-------------------------------------------------------
+
+pipeline {
+    agent{
+        label "slavenode"
+        }
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo "Hello World"
+                sh "sleep 10"
+            }
+        }
+        stage('Hola') {
+            steps {
+                echo "Hola Mundo"
+                echo "Hola means hello in Spanish"
+                sh "pwd"
+                sh "ls"
+                sh "sleep 3"
+            }
+        }
+    }
+    post {
+        success {
+            echo "This will run only if successful"
+            }
+        failure {
+            echo "This will run only if failed"
+            }
+        }
+}
+
+
+------------------------
+
+pipeline {
+    agent{
+        label "slavenode"
+        }
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo "Hello World"
+            }
+        }
+        stage('Hola') {
+            steps {
+                echo "Hola Mundo"
+                echo "Hola means hello in Spanish"
+                sh "pwd"
+                sh "ls"
+            }
+        }
+    }
+    post {
+        success {
+            echo "This will run only if successful"
+            }
+        failure {
+            echo "This will run only if failed"
+            }
+        }
+}
+
+---------------------------------------------
+
+
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo "Hello World"
+            }
+        }
+        stage('Hola') {
+            steps {
+                echo "Hola Mundo"
+                echo "Hola means hello in Spanish"
+                sh "pwd"
+                sh "ls"
+            }
+        }
+    }
+    post {
+        success {
+            echo "This will run only if successful"
+            }
+        failure {
+            echo "This will run only if failed"
+            }
+            }
+}
+
+
+--------------------
+
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo "Hello World"
+            }
+        }
+        stage('Hola') {
+            steps {
+                echo "Hola Mundo"
+                echo "Hola means hello in Spanish"
+                sh "pwd"
+                sh "ls"
+            }
+        }
+    }
+post {
+    success {
+        echo "This will run only if successful"
+    }
+    failure {
+        echo "This will run only if failed"
+    }
+}
+}
+
+--------------------------------
+
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo "Hello World"
+            }
+        }
+        stage('Hola') {
+            steps {
+                echo "Hola Mundo"
+                echo "Hola means hello in Spanish"
+                sh "pwd"
+                sh "ls"
+            }
+        }
+    }
+}
+
+post {
+    always {
+        echo "This will always run"
+    }
+    success {
+        echo "This will run only if successful"
+    }
+    failure {
+        echo "This will run only if failed"
+    }
+}
+
+____________--------------------------------------
+
+
+
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo "Hello World"
+            }
+        }
+        stage('Hola') {
+            steps {
+                echo "Hola Mundo"
+                echo "Hola means hello in Spanish"
+                sh "pwd"
+                sh "ls"
+            }
+        }
+    }
+}
+
+
+-----------------------------------------
+
+
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo "Hello World"
+            }
+        }
+        stage('Hola') {
+            steps {
+                echo "Hola Mundo"
+                echo "Hola means hello in Spanish"
+                pwd
+                ls
+            }
+        }
+    }
+}
+----------------------------------------
